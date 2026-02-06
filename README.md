@@ -1,6 +1,6 @@
 #  Portfolio React + Tailwind CSS
 
-Portfolio de **Merphy Mademba** — Version React avec Tailwind CSS
+Portfolio de **Merph-dev** — Version React avec Tailwind CSS
 
 ---
 
