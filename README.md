@@ -318,5 +318,3 @@ npm run dev -- --port 3000
 - [ ] Ajouter des animations supplémentaires
 - [ ] Optimiser les images
 - [ ] Ajouter Google Analytics
-
----
