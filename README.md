@@ -1,4 +1,4 @@
-# 🚀 Portfolio React + Tailwind CSS
+#  Portfolio React + Tailwind CSS
 
 Portfolio de **Merphy Mademba** — Version React avec Tailwind CSS
 
@@ -102,7 +102,7 @@ npm run build
 
 ---
 
-## 🚀 Déployer sur Vercel
+##  Déployer sur Vercel
 
 ### Option 1 : Via GitHub (recommandé)
 
@@ -184,7 +184,7 @@ function Card({ title, description }) {
 <Card title="Titre 2" description="Description 2" />
 ```
 
-**Avantage :** Tu écris le code une fois, tu le réutilises partout.
+**Avantage :** Vous écris le code une fois, et vous le réutilises partout.
 
 ---
 
@@ -210,7 +210,7 @@ function Card({ title, description }) {
 
 ## 🔧 Personnalisation
 
-### Modifier les couleurs
+### Modifier les couleurs selon faut besoin 
 
 Ouvre `tailwind.config.js` :
 
@@ -310,7 +310,7 @@ npm run dev -- --port 3000
 
 ---
 
-## 🎯 Prochaines étapes
+##  Prochaines étapes
 
 - [ ] Compléter tous les composants (About, Skills, etc.)
 - [ ] Ajouter les vraies données des projets
@@ -320,5 +320,3 @@ npm run dev -- --port 3000
 - [ ] Ajouter Google Analytics
 
 ---
-
-**Questions ?** Reviens me voir, je t'aide ! 🚀
