@@ -1,0 +1,137 @@
+/* ═══════════════════════════════════════════════════════════════
+   TAILWIND DIRECTIVES
+   Importe les styles de base, composants et utilitaires de Tailwind
+   ═══════════════════════════════════════════════════════════════ */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ═══════════════════════════════════════════════════════════════
+   GOOGLE FONTS
+   ═══════════════════════════════════════════════════════════════ */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=IBM+Plex+Mono:wght@300;400;500&family=Sora:wght@300;400;500;600&display=swap');
+
+/* ═══════════════════════════════════════════════════════════════
+   CUSTOM BASE STYLES
+   Styles de base appliqués à tous les éléments
+   ═══════════════════════════════════════════════════════════════ */
+@layer base {
+  /* Configuration de base du body */
+  body {
+    @apply bg-bg-dark text-text-primary font-body;
+    /* Empêche le scroll horizontal */
+    overflow-x: hidden;
+  }
+
+  /* Scroll fluide pour les ancres */
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   CUSTOM ANIMATIONS
+   Animations personnalisées pour les éléments
+   ═══════════════════════════════════════════════════════════════ */
+
+/* Animation : apparition depuis le bas */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Animation : apparition depuis le haut */
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Animation : pulsation (pour le point vert) */
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.3;
+  }
+}
+
+/* Classes utilitaires pour les animations */
+.animate-fade-in-up {
+  animation: fadeInUp 0.9s ease forwards;
+}
+
+.animate-fade-in-down {
+  animation: fadeInDown 0.8s ease forwards;
+}
+
+.animate-pulse-slow {
+  animation: pulse 2s infinite;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   TEXTURE DE BRUIT
+   Effet de grain subtil sur toute la page
+   ═══════════════════════════════════════════════════════════════ */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.4;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   CUSTOM COMPONENTS
+   Composants réutilisables avec Tailwind
+   ═══════════════════════════════════════════════════════════════ */
+@layer components {
+  /* Bouton principal */
+  .btn-primary {
+    @apply inline-flex items-center gap-2 bg-accent text-bg-dark px-7 py-3 rounded-md font-mono text-sm font-medium transition-all hover:shadow-[0_0_24px_rgba(0,229,160,0.35)] hover:-translate-y-0.5;
+  }
+
+  /* Bouton secondaire (transparent avec bordure) */
+  .btn-secondary {
+    @apply inline-flex items-center gap-2 bg-transparent text-accent border border-accent px-6 py-3 rounded-md font-mono text-sm font-medium transition-all hover:bg-accent/10 hover:shadow-[0_0_18px_rgba(0,229,160,0.35)] hover:-translate-y-0.5;
+  }
+
+  /* Carte de base */
+  .card {
+    @apply bg-bg-card border border-border rounded-xl p-6 transition-all hover:border-accent/40 hover:-translate-y-1;
+  }
+
+  /* Label de section */
+  .section-label {
+    @apply font-mono text-xs text-accent tracking-[0.2em] uppercase mb-2;
+  }
+
+  /* Titre de section */
+  .section-title {
+    @apply font-display text-4xl font-bold text-text-primary mb-3;
+  }
+
+  /* Description de section */
+  .section-desc {
+    @apply text-text-muted text-sm max-w-xl font-light mb-12;
+  }
+
+  /* Ligne décorative */
+  .divider {
+    @apply w-10 h-0.5 bg-accent mb-12;
+  }
+}
